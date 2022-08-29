@@ -1,0 +1,2 @@
+This folder contains an example usage of the AME-based Shapley value estimator on a threshold utility function as well as scripts for reproducing the Shapley value experiments on the simulated dataset.
+First add the package to PYTHONPATH with `export PYTHONPATH="/path/to/the/repo:$PYTHONPATH"`. To run the example, execute `python main.py`. To reproduce the experiment, run `bash run_all.sh` and the result will be plotted in `./logs/fig.png` and `./logs/fig_all.png`.
