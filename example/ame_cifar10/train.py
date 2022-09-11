@@ -260,7 +260,10 @@ def main():
     test_clean = torch.load(f"data/test-clean-{k}.pt")
     test_loader_poison = get_dataloader(test_poison, False)
     test_loader_clean = get_dataloader(test_clean, False)
-    subset = np.load(args.subset_f)
+    if args.subset_f is not None:
+        subset = np.load(args.subset_f)
+    else:
+        subset = np.ones(len(train)).astype(bool)
     print('subset size=', subset.sum())
     print('num poisons=', subset[:k].sum())
     train = [train[i] for i in np.where(subset)[0]]
